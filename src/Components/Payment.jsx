@@ -1,52 +1,43 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import "./Payment.css";
-import GPayButton from "react-google-pay-button"
 
 function Payment(){
-    <GooglePayButton
-  environment="TEST"
-  paymentRequest={{
-    apiVersion: 2,
-    apiVersionMinor: 0,
-    allowedPaymentMethods: [
-      {
-        type: 'CARD',
-        parameters: {
-          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-          allowedCardNetworks: ['MASTERCARD', 'VISA'],
-        },
-        tokenizationSpecification: {
-          type: 'PAYMENT_GATEWAY',
-          parameters: {
-            gateway: 'example',
-            gatewayMerchantId: 'exampleGatewayMerchantId',
+    const [amount, setAmount] = useState('');
+
+    const handleSubmit = (e) =>{
+      e.preventDefault();
+      var options = {
+          key: "rzp_test_ja2fMuG74ap9Gc",
+          key_secret: "yItRgDJtqb5WbnPMOiUdneKE",
+          amount: amount*100,
+          currency: "INR",
+          name: "KNCET",
+          description: "Mess Food Token Booking",
+          handler: function(response){
+              alert(response.razorpay_payment_id);
           },
-        },
-      },
-    ],
-    merchantInfo: {
-      merchantId: '12345678901234567890',
-      merchantName: 'Demo Merchant',
-    },
-    transactionInfo: {
-      totalPriceStatus: 'FINAL',
-      totalPriceLabel: 'Total',
-      totalPrice: '100.00',
-      currencyCode: 'USD',
-      countryCode: 'US',
-    },
-  }}
-  onLoadPaymentData={paymentRequest => {
-    console.log('load payment data', paymentRequest);
-  }}
-/>
+          prefill: {
+              name:"KNCET",
+              email: "tecboy2020@gmail.com",
+              contact:"8489335923"
+          },
+          notes:{
+              address: "Namakkal-Trichy State Highway, Tholurpatti Post, Thottiam Taluk Trichy District, TamilNadu"
+          },
+          theme:{
+              color:"#3399cc"
+          }
+      };
+      var pay = new window.Razorpay(options);
+      pay.open();
+    }
 
     return(
         <>
         <div>
             <h5 className="amount-title">Total Amount You Need To Pay</h5>
-            <input className="amount-field" type="text" value="70" /> <br/>
-            <button className="pay-button">Proceed To Pay</button>
+            <input className="amount-field" placeholder="Enter Amount" type="text" value={amount} onChange={(e)=>setAmount(e.target.value)} /> <br/>
+            <button className="pay-button" onClick={handleSubmit}>Proceed To Pay</button>
         </div>
         </>
     );

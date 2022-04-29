@@ -8,7 +8,7 @@ function FoodMenu(){
     const navigate = useNavigate();
     const date = new Date();
     const show_date = `${date.getDate()} ${date.toLocaleString('default',{month:"long"})}, ${date.getFullYear()} [ ${date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })} ]`
-    
+
     const PaymentPage = () => {
         navigate('/payment');
     }
@@ -22,7 +22,7 @@ function FoodMenu(){
                 </div>
                 <div className="menu-items">
                 <div className="veg-menu-items">
-                    <h4 className="veg">Veg-Menu</h4>
+                    <h4 className="veg">Veg-Menu [Rs.60]</h4>
                 <ol className="varities">
                     <li>Rice</li>
                     <li>Sambar</li>
@@ -35,7 +35,7 @@ function FoodMenu(){
                 </div>
 
                 <div className="non_veg-menu-items">
-                <h4 className="non-veg">Non-Veg-Menu</h4>
+                <h4 className="non-veg">Non-Veg-Menu [Rs.70] </h4>
                 <ol className="varities">
                     <li>Rice</li>
                     <li>Chicken Gravy</li>
