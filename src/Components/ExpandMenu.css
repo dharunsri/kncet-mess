@@ -1,0 +1,13 @@
+.collapsible .header{
+    background-color: grey;
+    padding: 12px;
+    cursor: pointer;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 8px;
+}
+
+.collapsible{
+    padding: 10px;
+    background-color: #282c34;
+}

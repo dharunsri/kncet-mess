@@ -1,0 +1,64 @@
+.menu-page{
+    width: 100vw;
+    height: 100vh;
+    margin-top: 5%;
+}
+
+.back{
+    margin-right: 85%;
+}
+
+.menu-items{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    
+}
+
+.non_veg-menu-items{
+    background-color: black;
+    margin-right: 10%;
+    border-radius: 18px;
+    padding-top: 5%;
+    text-align: left;
+    padding-left: 5%;
+}
+
+.veg-menu-items{
+    background-color: black;
+    margin-left: 10%;
+    padding-top: 5%;
+    border-radius: 18px;
+    text-align: left;
+    padding-left: 5%;
+}
+
+.veg, .non-veg{
+    text-align: center;
+    padding-right: 5%;
+}
+
+.minus{
+    padding-left: 3%;
+}
+
+.col-xl-1{
+    display: inline;
+}
+
+.add-tokens{
+    padding-bottom: 3%;
+}
+
+.place-order{
+    border-radius: 25px;
+    margin-top: 1%;
+    width: 50%;
+    padding: 3px;
+    background-color: blueviolet;
+    border-color: blueviolet;
+    border-width: 5px;
+    color: aliceblue;
+    font-weight: bolder;
+}
+

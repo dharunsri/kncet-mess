@@ -1,0 +1,21 @@
+.amount-title{
+    padding-bottom: 5%;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.amount-field{
+    border-radius: 8px;
+    margin-bottom: 5%;
+    text-align: center;
+    
+}
+
+.pay-button{
+    border-radius: 28px;
+    padding: 1%;
+    padding-left: 15%;
+    padding-right: 15%;
+    background-color: gold;
+    font-weight: bold;
+}
