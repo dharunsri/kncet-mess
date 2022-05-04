@@ -61,3 +61,18 @@
     color: aliceblue;
     font-weight: bolder;
 }
+
+.total-price{
+    padding-top: 5%;
+}
+
+#amount-title{
+    display: inline-block;
+}
+
+#total-amount{
+    border-radius: 8px;
+    margin-left: 3%;
+    width: 27%;
+    text-align: center;
+}

@@ -1,7 +1,9 @@
 import React, {useState} from "react";
+import AddTokens from "./AddTokens";
 import "./Payment.css";
 
-function Payment(){
+
+function Payment(props){
     const [amount, setAmount] = useState('');
 
     const handleSubmit = (e) =>{

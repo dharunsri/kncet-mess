@@ -30,7 +30,7 @@ function FoodMenu(){
                     <li>Curd</li>
                 </ol>
                 <div className="add-tokens">
-                <AddTokens/>
+                <AddTokens data="60"/>
                 </div>
                 </div>
 
@@ -43,7 +43,7 @@ function FoodMenu(){
                     <li>Curd</li>
                 </ol>
                 <div className="add-tokens">
-                <AddTokens/>
+                <AddTokens data="70"/>
                 </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@ function FoodMenu(){
                 </div>
                 <div className="menu-items">
                 <div className="veg-menu-items">
-                    <h4 className="veg">Veg-Menu</h4>
+                    <h4 className="veg">Veg-Menu [Rs.60]</h4>
                 <ol className="varities">
                     <li>Rice</li>
                     <li>Sambar</li>
@@ -66,12 +66,12 @@ function FoodMenu(){
                     <li>Curd</li>
                 </ol>
                 <div className="add-tokens">
-                <AddTokens/>
+                <AddTokens data="60" />
                 </div>
                 </div>
 
                 <div className="non_veg-menu-items">
-                <h4 className="non-veg">Non-Veg-Menu</h4>
+                <h4 className="non-veg">Non-Veg-Menu [Rs.70]</h4>
                 <ol className="varities">
                     <li>Rice</li>
                     <li>Chicken Gravy</li>
@@ -79,7 +79,7 @@ function FoodMenu(){
                     <li>Curd</li>
                 </ol>
                 <div className="add-tokens">
-                <AddTokens/>
+                <AddTokens data="70" />
                 </div>
                 </div>
             </div>
@@ -93,7 +93,7 @@ function FoodMenu(){
                 </div>
                 <div className="menu-items">
                 <div className="veg-menu-items">
-                    <h4 className="veg">Veg-Menu</h4>
+                    <h4 className="veg">Veg-Menu [Rs.60]</h4>
                 <ol className="varities">
                     <li>Rice</li>
                     <li>Sambar</li>
@@ -101,12 +101,12 @@ function FoodMenu(){
                     <li>Curd</li>
                 </ol>
                 <div className="add-tokens">
-                <AddTokens/>
+                <AddTokens data="60" />
                 </div>
                 </div>
 
                 <div className="non_veg-menu-items">
-                <h4 className="non-veg">Non-Veg-Menu</h4>
+                <h4 className="non-veg">Non-Veg-Menu [Rs.70]</h4>
                 <ol className="varities">
                     <li>Rice</li>
                     <li>Chicken Gravy</li>
@@ -114,7 +114,7 @@ function FoodMenu(){
                     <li>Curd</li>
                 </ol>
                 <div className="add-tokens">
-                <AddTokens/>
+                <AddTokens data="70"/>
                 </div>
                 </div>
             </div>
@@ -128,7 +128,7 @@ function FoodMenu(){
                 </div>
                 <div className="menu-items">
                 <div className="veg-menu-items">
-                    <h4 className="veg">Veg-Menu</h4>
+                    <h4 className="veg">Veg-Menu [Rs.60]</h4>
                 <ol className="varities">
                     <li>Rice</li>
                     <li>Sambar</li>
@@ -136,12 +136,12 @@ function FoodMenu(){
                     <li>Curd</li>
                 </ol>
                 <div className="add-tokens">
-                <AddTokens/>
+                <AddTokens data="60"/>
                 </div>
                 </div>
 
                 <div className="non_veg-menu-items">
-                <h4 className="non-veg">Non-Veg-Menu</h4>
+                <h4 className="non-veg">Non-Veg-Menu [Rs.70]</h4>
                 <ol className="varities">
                     <li>Rice</li>
                     <li>Chicken Gravy</li>
@@ -149,7 +149,7 @@ function FoodMenu(){
                     <li>Curd</li>
                 </ol>
                 <div className="add-tokens">
-                <AddTokens/>
+                <AddTokens data="70" />
                 </div>
                 </div>
             </div>
@@ -163,7 +163,7 @@ function FoodMenu(){
                 </div>
                 <div className="menu-items">
                 <div className="veg-menu-items">
-                    <h4 className="veg">Veg-Menu</h4>
+                    <h4 className="veg">Veg-Menu [Rs.60]</h4>
                 <ol className="varities">
                     <li>Rice</li>
                     <li>Sambar</li>
@@ -171,12 +171,12 @@ function FoodMenu(){
                     <li>Curd</li>
                 </ol>
                 <div className="add-tokens">
-                <AddTokens/>
+                <AddTokens data="60"/>
                 </div>
                 </div>
 
                 <div className="non_veg-menu-items">
-                <h4 className="non-veg">Non-Veg-Menu</h4>
+                <h4 className="non-veg">Non-Veg-Menu [Rs.70]</h4>
                 <ol className="varities">
                     <li>Rice</li>
                     <li>Chicken Gravy</li>
@@ -184,7 +184,7 @@ function FoodMenu(){
                     <li>Curd</li>
                 </ol>
                 <div className="add-tokens">
-                <AddTokens/>
+                <AddTokens data="70"/>
                 </div>
                 </div>
             </div>
@@ -198,7 +198,7 @@ function FoodMenu(){
                 </div>
                 <div className="menu-items">
                 <div className="veg-menu-items">
-                    <h4 className="veg">Veg-Menu</h4>
+                    <h4 className="veg">Veg-Menu [Rs.60]</h4>
                 <ol className="varities">
                     <li>Rice</li>
                     <li>Sambar</li>
@@ -206,12 +206,12 @@ function FoodMenu(){
                     <li>Curd</li>
                 </ol>
                 <div className="add-tokens">
-                <AddTokens/>
+                <AddTokens data="60"/>
                 </div>
                 </div>
 
                 <div className="non_veg-menu-items">
-                <h4 className="non-veg">Non-Veg-Menu</h4>
+                <h4 className="non-veg">Non-Veg-Menu [Rs.70]</h4>
                 <ol className="varities">
                     <li>Rice</li>
                     <li>Chicken Gravy</li>
@@ -219,7 +219,7 @@ function FoodMenu(){
                     <li>Curd</li>
                 </ol>
                 <div className="add-tokens">
-                <AddTokens/>
+                <AddTokens data="70"/>
                 </div>
                 </div>
             </div>
