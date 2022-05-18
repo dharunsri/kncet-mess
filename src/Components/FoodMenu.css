@@ -5,7 +5,16 @@
 }
 
 .back{
-    margin-right: 85%;
+    margin-right: 80%;
+    border-radius: 25px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 5px;
+    background-color: aqua;
+
 }
 
 .menu-items{
@@ -60,4 +69,20 @@
     border-width: 5px;
     color: aliceblue;
     font-weight: bolder;
+}
+
+.price{
+    padding-top: 2%;
+    margin: auto;
+}
+
+.total-amount{
+    display: inline-block;
+}
+
+.total-amount-box{
+    border-radius: 8px;
+    text-align: center;
+    width: 50%;
+    margin-left: 5%;
 }

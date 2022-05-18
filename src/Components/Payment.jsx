@@ -1,15 +1,15 @@
 import React, {useState} from "react";
 import "./Payment.css";
-
+var amt = window.location.search.substring(1).split("|");
+const total=parseInt(amt[0])+parseInt(amt[1]);
 function Payment(){
-    const [amount, setAmount] = useState('');
 
     const handleSubmit = (e) =>{
       e.preventDefault();
       var options = {
           key: "rzp_test_ja2fMuG74ap9Gc",
           key_secret: "yItRgDJtqb5WbnPMOiUdneKE",
-          amount: amount*100,
+          amount: total*100,
           currency: "INR",
           name: "KNCET",
           description: "Mess Food Token Booking",
@@ -36,7 +36,7 @@ function Payment(){
         <>
         <div>
             <h5 className="amount-title">Total Amount You Need To Pay</h5>
-            <input className="amount-field" placeholder="Enter Amount" type="text" value={amount} onChange={(e)=>setAmount(e.target.value)} /> <br/>
+            <h1>{total}</h1><br/>
             <button className="pay-button" onClick={handleSubmit}>Proceed To Pay</button>
         </div>
         </>
