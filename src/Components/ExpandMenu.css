@@ -11,3 +11,13 @@
     padding: 10px;
     background-color: #282c34;
 }
+
+.date{
+    display: inline;
+    padding-left: 50%;
+}
+
+.title{
+    display: inline;
+}
+

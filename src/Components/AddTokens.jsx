@@ -1,20 +1,24 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import "./FoodMenu.css";
-import {additems, minusItems} from './FoodMenu';
+import{getProps} from "./ExpandMenu";
+import {additems, minusItems, setDate} from './FoodMenu';
 
 function AddTokens(props){
     let [num, setNum] = useState(0);
     let [amt, setAmt] = useState(props.data);
+    var date=getProps().date;
     const inc = () => {
         setNum(Number(num)+1);
         additems(amt);
+        setDate(date)
     };
 
     const dec = () => {
         if(num>0){
             setNum(num-1);
             minusItems(amt);
+            setDate(date);
         }
     };
     let handleChange = (e) => {

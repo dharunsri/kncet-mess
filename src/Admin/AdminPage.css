@@ -1,0 +1,47 @@
+.AdminPage{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.username{
+    border-radius: 12px;
+    text-align: center;
+    padding: 1%;
+    margin-top: 5%;
+}
+
+.password{
+    border-radius: 12px;
+    text-align: center;
+    padding: 1%;
+    margin-top: 5%;
+}
+
+.Admin-btn{
+    border-radius: 8px;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 5%;
+    font-weight: bold;
+}
+
+
+.usr-error{
+    font-size: 18px;
+    text-align: left;
+    margin-left: 15px;
+    color: red;
+    display: none;
+}
+
+.pass-error{
+    font-size: 18px;
+    text-align: left;
+    margin-left: 15px;
+    color: red;
+    display: none;
+}

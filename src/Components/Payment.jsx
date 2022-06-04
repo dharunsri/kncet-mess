@@ -1,7 +1,35 @@
 import React, {useState} from "react";
 import "./Payment.css";
+
 var amt = window.location.search.substring(1).split("|");
 const total=parseInt(amt[0])+parseInt(amt[1]);
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+var date = mm + '/' + dd + '/' + yyyy;
+function myFunction(s)
+{
+    var formData = new FormData(); 
+    formData.append("veg",amt[0]);
+    formData.append("nonveg",amt[1]);
+    formData.append("date",amt[2])
+    formData.append("username",amt[3])
+    formData.append("password",amt[4])
+    formData.append("id",s)
+    
+    var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function()
+        {
+            if(xmlHttp.readyState === 4 && xmlHttp.status === 200)
+            {
+                alert(xmlHttp.responseText);
+            }
+        }
+        xmlHttp.open("post", "http://127.0.0.1:5000/getinfo"); 
+        xmlHttp.send(formData); 
+}
+
 function Payment(){
 
     const handleSubmit = (e) =>{
@@ -14,7 +42,9 @@ function Payment(){
           name: "KNCET",
           description: "Mess Food Token Booking",
           handler: function(response){
-              alert(response.razorpay_payment_id);
+              myFunction(response.razorpay_payment_id);
+              window.location.replace("http://localhost:3000/");
+            
           },
           prefill: {
               name:"KNCET",

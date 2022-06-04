@@ -27,3 +27,33 @@
     padding-left: 3%;
     color: lightblue;
 }
+
+.new{
+    display: inline-block;
+    padding-right: 15px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.reg{
+    display: inline-block;
+    font-size: 18px;
+    color: aqua;
+    text-align: center;
+}
+
+.usr-error{
+    font-size: 18px;
+    text-align: left;
+    margin-left: 15px;
+    color: red;
+    display: none;
+}
+
+.pass-error{
+    font-size: 18px;
+    text-align: left;
+    margin-left: 15px;
+    color: red;
+    display: none;
+}
