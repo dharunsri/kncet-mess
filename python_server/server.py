@@ -13,6 +13,52 @@ mydb = mysql.connector.connect(
   password ="",
   database="kncet_mess"
 )
+def getDetail1(s,date):
+    try:
+        s=s.split("|")
+        id1=s[1]
+        tn=s[0].split("@")[0]
+        mycursor7 = mydb.cursor()
+        mycursor7.execute("SELECT Veg, Non_veg FROM " +tn + " WHERE transid ='"+id1+"'")
+        y = mycursor7.fetchall()
+        mycursor6 = mydb.cursor()
+        mycursor6.execute("SELECT Veg, Non_veg FROM total where Date='"+date+"'")
+        x = mycursor6.fetchall()
+        mycursor3 = mydb.cursor()
+        sql = "UPDATE total SET Veg = %s,  Non_veg =%s WHERE Date = %s"
+        print(x[0][0]-y[0][0],x[0][1]-y[0][1],date)
+        val = (x[0][0]-y[0][0],x[0][1]-y[0][1],date)
+        mycursor3.execute(sql, val)
+        mydb.commit()
+        mycursor6 = mydb.cursor()
+        sql = "DELETE FROM "+tn+" WHERE transid ='"+id1+"'"
+        mycursor6.execute(sql)
+        mydb.commit()
+    except:
+        print("InValid Token")
+        
+    
+        
+        
+    
+def GetTotalTokens(date,veg,non_veg):
+    mycursor6 = mydb.cursor()
+    mycursor6.execute("SELECT Veg, Non_veg FROM total where Date='"+date+"'")
+    x = mycursor6.fetchall()
+
+
+    if(len(x)==0):
+        mycursor2 = mydb.cursor()
+        sql = "INSERT INTO total VALUES (%s, %s, %s)"
+        val = (date,veg,non_veg)
+        mycursor2.execute(sql, val)
+        mydb.commit()
+    else:
+        mycursor3 = mydb.cursor()
+        sql = "UPDATE total SET Veg = %s,  Non_veg =%s WHERE Date = %s"
+        val = (x[0][0]+veg,x[0][1]+non_veg,date)
+        mycursor3.execute(sql, val)
+        mydb.commit()
 
 def sendEmail(to, content,m):
     msg = MIMEMultipart()
@@ -78,8 +124,6 @@ def register(username,password):
         return 0
         
 
-userid=""
-passid=""
 def setPass(r,r1):
     userid=r
     passid=r1
@@ -107,6 +151,9 @@ def Login():
     if(request.method=='POST'):
         r=request.form['username']
         r1=request.form['12345']
+        if(r=="admin@gmail.com"and r1=="root"):
+             return redirect("http://localhost/data.php")
+            
         res=login(r,r1)
         if(res==1):
             return redirect("http://localhost:3000/mess?"+r+"|"+r1)
@@ -139,8 +186,8 @@ def GetInfo():
         r=request.form["veg"]
         r1=request.form["nonveg"]
         r2=int(r)+int(r1)
-        r=int(r)/60
-        r1=int(r1)/70
+        r=int(r)//60
+        r1=int(r1)//70
         r3=request.form["date"].replace("%20"," ")
         r4=request.form["username"].replace("%20"," ")
         r5=request.form["password"].replace("%20"," ")
@@ -154,7 +201,8 @@ def GetInfo():
              val = (r,r1,r+r1,r3,r6,r2)
              mycursor1.execute(sql, val)
              mydb.commit()
-             img = qrcode.make(r4+"|"+r6)
+             GetTotalTokens(r3,r,r1)
+             img = qrcode.make(r4+"|"+r6+"|"+str(r)+"|"+str(r1))
              img.save(fn+".png")
              sendEmail(r4,fn+".png",m)
              
@@ -164,14 +212,21 @@ def GetInfo():
         return "404 page"
 
 
+
+
     
 @app.route('/admin',methods=['POST'])
 def adminpage():
      if(request.method=='POST'):
-            
         r=request.form["id1"]
-        print(r+"guhj")
-        return "gg"
+        date=request.form["date"]
+        getDetail1(r,date)
+        print(r,date)
+        return redirect("http://localhost:3000/mess-token-qr?123456")
+@app.route('/sample')
+def samaplehoe():
+    return "hello"
+
     
 # main driver function
 if __name__ == '__main__':

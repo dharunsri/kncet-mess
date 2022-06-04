@@ -4,20 +4,33 @@ import { ArrowBack } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import {QrReader} from "react-qr-reader";
 var temp="";
+function generateDate(num){
+    console.log(num);
+    var someDate = new Date();
+    var numberOfDaysToAdd = num;
+    var result = someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
+    result = new Date(result);
+
+    var dd = String(result.getDate());
+    var yyyy = result.getFullYear();
+    var month = result.toLocaleString('en-us', { month: 'long' });
+    var today = dd +" "+ month + "," + yyyy; 
+    return today;
+}
+var amt = window.location.search.substring(1).split("|");
+
 function check(s){
 
     var formData = new FormData(); 
     formData.append("id1",s);
+    formData.append("date",generateDate(0))
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function()
-    {
-        if(xmlHttp.readyState === 4 && xmlHttp.status === 200)
-        {
-            alert(xmlHttp.responseText);
-        }
+    xmlHttp.onload = function() {
+        alert(xmlHttp.responseText);
     }
-    xmlHttp.open("post", "http://127.0.0.1:5000/admin"); 
-    xmlHttp.send(formData); 
+    xmlHttp.open("POST", "http://127.0.0.1:5000/admin",true); 
+     xmlHttp.send(formData); 
+  
 }
 
 function QrCode() {
@@ -50,7 +63,7 @@ function QrCode() {
                         onResult={(result, error) => {
                             if(!!result){
                                var some=result?.text;
-                                setData(some);
+                                setData(some.split("|")[2]+"-VEG   "+some.split("|")[3]+"- NON-VEG   ");
                                 if(some!=temp){
                                 check(some);
                                 temp=some;

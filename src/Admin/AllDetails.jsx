@@ -1,6 +1,23 @@
 import './AllDetails.css';
 import { useNavigate } from 'react-router-dom';
-
+function loadDoc() {
+    var xhr = new XMLHttpRequest();
+        
+    // What to do when response is ready  
+    xhr.onreadystatechange = () => {
+        
+             
+               alert( xhr.responseText);
+            
+        
+    }
+    xhr.open('GET', "http://localhost/data.php");
+    
+    // Send the request
+    xhr.send();
+   
+  }
+loadDoc();
 const data = [
     {mail_id: "test@gmail.com", password:"12345", ordered_date: "20 JAN, 2022", veg_token: 1, non_veg_token: 3, total_tokens: 4, amount: 270}
 ]

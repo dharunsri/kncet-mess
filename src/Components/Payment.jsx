@@ -3,11 +3,7 @@ import "./Payment.css";
 
 var amt = window.location.search.substring(1).split("|");
 const total=parseInt(amt[0])+parseInt(amt[1]);
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = today.getFullYear();
-var date = mm + '/' + dd + '/' + yyyy;
+
 function myFunction(s)
 {
     var formData = new FormData(); 
