@@ -9,6 +9,7 @@ import SignUpPage from './Components/SignUpPage';
 import AdminPage from './Admin/AdminPage';
 import AllDetails from './Admin/AllDetails';
 import QrCode from './Components/QrCode';
+import Success from './Components/Success';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path='/menu' element={<FoodMenu/>}/>
             <Route path='/payment' element={<Payment/>}/>
             <Route path='/mess-token-qr' element={<QrCode/>}/>
+            <Route path='/Success' element={<Success/>}/>
           </Routes>
         </Router>
       </header>

@@ -26,22 +26,21 @@ function check(s){
     formData.append("date",generateDate(0))
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onload = function() {
-        alert(xmlHttp.responseText);
+        //alert(xmlHttp.responseText);
     }
     xmlHttp.open("POST", "http://127.0.0.1:5000/admin",true); 
      xmlHttp.send(formData); 
   
 }
+    
+const handleScan = () => {
+    window.location.replace("http://localhost/data.php");
+}
 
 function QrCode() {
 
     const [data, setData] = useState('No result');
-    
-    const handleScan = (data1) => {
-        if(data1){
-            setData(data1)
-        }
-    }
+
 
     const handleError = err => {
         console.error(err)
@@ -49,7 +48,7 @@ function QrCode() {
 
     return (
         <div>
-            <Link to="/all-details">
+            <Link to={handleScan} onClick={handleScan}>
                 <Fab style={{marginRight:10}} color="primary" >
                     <ArrowBack/>
                 </Fab>

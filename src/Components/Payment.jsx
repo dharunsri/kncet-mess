@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./Payment.css";
+import { useNavigate } from "react-router-dom";
 
 var amt = window.location.search.substring(1).split("|");
 const total=parseInt(amt[0])+parseInt(amt[1]);
@@ -26,6 +27,11 @@ function myFunction(s)
         xmlHttp.send(formData); 
 }
 
+// const next = () => {
+//     var navigate = useNavigate();
+//     navigate('/Success');
+// }
+
 function Payment(){
 
     const handleSubmit = (e) =>{
@@ -39,7 +45,7 @@ function Payment(){
           description: "Mess Food Token Booking",
           handler: function(response){
               myFunction(response.razorpay_payment_id);
-              window.location.replace("http://localhost:3000/");
+              window.location.replace("http://localhost:3000/Success");
             
           },
           prefill: {

@@ -33,7 +33,6 @@ function LoginPage(){
 
     return(
         <>
-            <p onClick={admin}>Go to admin page</p>
             <h3 className="login-title">LOGIN</h3>
 
             <div className="login page">

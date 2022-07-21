@@ -7,7 +7,7 @@ function loadDoc() {
     xhr.onreadystatechange = () => {
         
              
-               alert( xhr.responseText);
+               //alert( xhr.responseText);
             
         
     }
